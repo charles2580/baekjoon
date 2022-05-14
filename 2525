@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+	int A, B, C;
+
+	scanf("%d %d", &A, &B);
+	scanf("%d", &C);
+
+	int h = A + C / 60;
+	int m = B + C % 60;
+	
+	if (m > 59)
+	{
+		m -= 60;
+		h += 1;
+		if (h > 23)
+		{
+			h -= 24;
+		}
+
+	}
+	
+	if (h > 23)
+	{
+		h -= 24;
+	}
+
+	printf("%d %d", h, m);
+
+}
