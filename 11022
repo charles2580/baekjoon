@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int A, B, T;
+
+	scanf("%d", &T);
+
+	int* num = malloc(sizeof(int) * T);
+	int* n1 = malloc(sizeof(int) * T);
+	int* n2 = malloc(sizeof(int) * T);
+
+	for (int i = 0; i < T; i++)
+	{
+		scanf("%d %d", &A, &B);
+		num[i] = A + B;
+		n1[i] = A;
+		n2[i] = B;
+	}
+	for (int l = 0; l < T; l++)
+	{
+		printf("Case #%d: %d + %d = %d\n", l+1,n1[l],n2[l],num[l]);
+	}
+}
