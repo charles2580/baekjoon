@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+	int N, X;
+	int ar;
+
+	scanf("%d %d", &N, &X);
+
+	int* arnum = malloc(sizeof(int) * N);
+
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%d", &ar);
+
+		if (ar < X)
+		{
+			arnum[i] = ar;
+		}
+		else
+		{
+			arnum[i] = 0;
+		}
+	}
+
+	for (int l = 0; l < N; l++)
+	{
+		if (arnum[l] != 0)
+		{
+			printf("%d ", arnum[l]);
+		}
+	}
+	free (arnum);
+}
