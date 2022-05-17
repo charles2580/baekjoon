@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int A, B, C;
+	
+	scanf("%d", &A);
+	scanf("%d", &B);
+	scanf("%d", &C);
+
+	int num = A * B * C;
+	int count = 1;
+	int found = 0;
+	int f_count = 0;
+	while (num / 10 != 0)
+	{
+		num = num / 10;
+		count++;
+	}
+	num = A * B * C;
+	int* arr = malloc(sizeof(int) * count);
+
+	for (int i = 0; i < count; i++)
+	{
+		arr[i] = num % 10;
+		num = num / 10;
+	}
+	
+	for (int l = 0; l < 10; l++)
+	{
+		for (int z = 0; z < count; z++)
+		{
+			if (arr[z] == l)
+			{
+				f_count++;
+			}
+		}
+		printf("%d\n", f_count);
+		
+		f_count = 0;
+	}
+	free(arr);
+}
